@@ -1,14 +1,22 @@
 version: 2.1
+commands:
+  sayhello:
+    description: 'What up'
+    parameters:
+      to:
+        type: string
+        default: 'Whats Good'
+    steps:
+      - run: |
+          echo << parameters.to >>
 jobs:
   Hello-World:
     docker:
       - image: alpine:3.7
     steps:
-      - run:
-          name: Hello World
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeine'
+      - sayhello:
+          to: 'Mike'
+
   ihavecode:
     docker:
       - image: alpine:3.7
