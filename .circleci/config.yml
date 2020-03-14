@@ -18,14 +18,14 @@ jobs:
           name: Code here
           command: |
             ls -al
-    runwithnode:
-      docker:
-        - image: circleci/node:10-browsers
-      steps:
-        - run:
-            name: Running in Node
-            command: |
-              node -v
+  runwithnode:
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - run:
+          name: Running in Node
+          command: |
+            node -v
 
 workflows:
   version: 2
